@@ -1,86 +1,1212 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>For My Love 💜</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 5th Monthsary, My Beautiful Wife 💜</title>
+
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-margin:0;min-height:100vh;padding:25px 14px;color:#fff;
-font-family:Georgia,serif;
-background:radial-gradient(circle at top,#7b2fa3,#210b2d 55%,#09030d);
+    font-family:Georgia,"Times New Roman",serif;
+    color:#fff;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%,#8b39bd55,transparent 30%),
+        radial-gradient(circle at 80% 30%,#7b25a855,transparent 30%),
+        linear-gradient(135deg,#08000f,#190022,#30004b,#100018);
+
+    background-size:200% 200%;
+    animation:bg 15s ease infinite;
 }
-.card{
-max-width:700px;margin:auto;padding:25px 20px 35px;text-align:center;
-background:#ffffff12;border:1px solid #d69aff55;border-radius:30px;
-box-shadow:0 20px 70px #0008;backdrop-filter:blur(12px)
+
+@keyframes bg{
+    0%,100%{
+        background-position:0 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
 }
-h1{color:#f0caff;font-size:40px;margin:5px}
-.sub{color:#d9b5e9;font-style:italic;margin:8px 0 10px}
-.flower{width:170px;height:210px;margin:10px auto;position:relative;animation:s 3s infinite ease-in-out}
-@keyframes s{50%{transform:rotate(3deg)}}
-.stem{position:absolute;width:8px;height:125px;background:#459451;left:81px;top:75px;border-radius:10px}
-.leaf{position:absolute;width:65px;height:28px;background:#4d9b56;border-radius:100% 0;left:25px;top:150px;transform:rotate(25deg)}
-.leaf2{left:85px;top:130px;transform:scaleX(-1) rotate(25deg)}
-.p{
-position:absolute;width:55px;height:85px;left:57px;top:8px;
-border-radius:55%;transform-origin:27px 72px;
-background:linear-gradient(145deg,#edc5ff,#a83de8,#65168f);
-box-shadow:0 0 18px #bd62ff99
+
+
+/* =========================
+   BOKEH BACKGROUND
+========================= */
+
+.bokeh{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
 }
-.p2{transform:rotate(72deg)}.p3{transform:rotate(144deg)}
-.p4{transform:rotate(216deg)}.p5{transform:rotate(288deg)}
-.center{position:absolute;z-index:5;left:65px;top:58px;width:40px;height:40px;border-radius:50%;background:#ffc94f;box-shadow:0 0 25px #ffc94f}
-.note{color:#e7c1ff;margin:5px 0 25px}
+
+.bokeh i{
+    position:absolute;
+    display:block;
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffd7ff,
+            #d56cff 38%,
+            #7d2bc1 72%,
+            transparent 73%
+        );
+
+    filter:blur(7px);
+    opacity:.3;
+
+    animation:drift linear infinite;
+}
+
+@keyframes drift{
+
+    0%{
+        transform:translate3d(0,110vh,0) scale(.65);
+        opacity:0;
+    }
+
+    12%{
+        opacity:.35;
+    }
+
+    50%{
+        transform:translate3d(35px,48vh,0) scale(1);
+    }
+
+    90%{
+        opacity:.25;
+    }
+
+    100%{
+        transform:translate3d(-30px,-15vh,0) scale(.8);
+        opacity:0;
+    }
+}
+
+.b1{
+    width:110px;
+    height:110px;
+    left:3%;
+    animation-duration:18s;
+}
+
+.b2{
+    width:75px;
+    height:75px;
+    left:17%;
+    animation-duration:23s;
+    animation-delay:3s;
+}
+
+.b3{
+    width:150px;
+    height:150px;
+    left:32%;
+    animation-duration:20s;
+    animation-delay:7s;
+}
+
+.b4{
+    width:90px;
+    height:90px;
+    left:51%;
+    animation-duration:25s;
+    animation-delay:1s;
+}
+
+.b5{
+    width:125px;
+    height:125px;
+    left:68%;
+    animation-duration:19s;
+    animation-delay:5s;
+}
+
+.b6{
+    width:70px;
+    height:70px;
+    left:84%;
+    animation-duration:22s;
+    animation-delay:2s;
+}
+
+.b7{
+    width:180px;
+    height:180px;
+    left:90%;
+    animation-duration:27s;
+    animation-delay:9s;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+}
+
+.star{
+    position:absolute;
+    color:#fff;
+    font-size:9px;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.2;
+        transform:scale(.7);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.4);
+    }
+}
+
+
+/* =========================
+   FLOATING FLOWERS
+========================= */
+
+.floating-flower{
+    position:fixed;
+    z-index:1;
+    pointer-events:none;
+    animation:float linear infinite;
+    opacity:.8;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(110vh) rotate(0);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.8;
+    }
+
+    50%{
+        transform:
+            translateY(50vh)
+            rotate(180deg)
+            translateX(30px);
+    }
+
+    90%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:
+            translateY(-15vh)
+            rotate(360deg)
+            translateX(-30px);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    position:relative;
+    z-index:2;
+}
+
+.hero-content{
+    max-width:850px;
+    padding:40px 25px;
+}
+
+.small-title{
+    color:#e8baff;
+
+    font-size:15px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+}
+
+
+/* FLOWER */
+
+.flower-symbol{
+    font-size:90px;
+
+    display:inline-block;
+
+    filter:
+        drop-shadow(0 0 20px #c96cff)
+        drop-shadow(0 0 40px #a52fff);
+
+    animation:pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1) rotate(-5deg);
+    }
+
+    50%{
+        transform:scale(1.12) rotate(5deg);
+    }
+}
+
+
+/* MAIN TITLE */
+
+.hero h1{
+
+    font-size:clamp(45px,10vw,90px);
+
+    line-height:.98;
+
+    margin-bottom:25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #e8b5ff,
+            #b86cff,
+            #fff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:titleGlow 5s infinite;
+}
+
+@keyframes titleGlow{
+
+    0%,100%{
+        background-position:0;
+    }
+
+    50%{
+        background-position:100%;
+    }
+}
+
+
+/* SUBTITLE */
+
+.hero-subtitle{
+
+    color:#ead8f5;
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    max-width:700px;
+
+    margin:
+        0 auto
+        35px;
+}
+
+
+/* BUTTON */
+
+.open-button{
+
+    display:inline-block;
+
+    padding:
+        16px
+        35px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9b3cff,
+            #d48aff
+        );
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 0 20px #be5aff80,
+        0 10px 30px #0006;
+
+    transition:.4s;
+}
+
+.open-button:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 0 40px #dc82ffff;
+}
+
+
+/* =========================
+   FLOWER GARDEN
+========================= */
+
+.garden{
+
+    position:relative;
+
+    height:190px;
+
+    overflow:hidden;
+
+    margin-top:-20px;
+
+    z-index:2;
+
+    text-align:center;
+}
+
+.garden-flower{
+
+    position:absolute;
+
+    bottom:0;
+
+    font-size:55px;
+
+    animation:sway 4s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 0 12px #c864ffb3);
+}
+
+.garden-flower:nth-child(1){
+    left:5%;
+}
+
+.garden-flower:nth-child(2){
+    left:18%;
+    animation-delay:1s;
+}
+
+.garden-flower:nth-child(3){
+    left:32%;
+    animation-delay:2s;
+}
+
+.garden-flower:nth-child(4){
+    left:48%;
+    animation-delay:.5s;
+}
+
+.garden-flower:nth-child(5){
+    left:65%;
+    animation-delay:1.5s;
+}
+
+.garden-flower:nth-child(6){
+    left:80%;
+    animation-delay:2.5s;
+}
+
+.garden-flower:nth-child(7){
+    left:93%;
+    animation-delay:1s;
+}
+
+@keyframes sway{
+
+    0%,100%{
+        transform:
+            rotate(-8deg)
+            translateY(0);
+    }
+
+    50%{
+        transform:
+            rotate(8deg)
+            translateY(-12px);
+    }
+}
+
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter-section{
+
+    position:relative;
+
+    z-index:3;
+
+    padding:
+        30px
+        18px
+        100px;
+}
+
 .letter{
-text-align:left;background:#09030d88;padding:23px 19px;
-border-radius:22px;border:1px solid #d69aff22
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:
+        50px
+        35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff1f,
+            #ffffff0a
+        );
+
+    border:
+        1px solid
+        #e7b4ff4d;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 0 50px #b446ff2e,
+        inset 0 0 40px #ffffff08;
+
+    backdrop-filter:blur(18px);
+
+    position:relative;
 }
-p{font-size:17px;line-height:1.85;margin:0 0 19px}
-.first{font-size:21px;color:#e3b1ff}
-.end{text-align:center;color:#e4b7ff;font-size:21px}
-.heart{font-size:30px;animation:p 1.5s infinite}
-@keyframes p{50%{transform:scale(1.2)}}
+
+
+/* CORNER FLOWERS */
+
+.letter:before{
+
+    content:"🌸";
+
+    position:absolute;
+
+    top:-35px;
+    left:20px;
+
+    font-size:65px;
+
+    filter:
+        drop-shadow(0 0 15px #c66aff);
+}
+
+.letter:after{
+
+    content:"🌺";
+
+    position:absolute;
+
+    bottom:-35px;
+    right:20px;
+
+    font-size:65px;
+
+    filter:
+        drop-shadow(0 0 15px #c66aff);
+}
+
+
+/* LETTER TITLE */
+
+.letter-title{
+
+    text-align:center;
+
+    font-size:32px;
+
+    color:#e5b3ff;
+
+    margin-bottom:40px;
+
+    text-shadow:
+        0 0 15px #d378ffb3;
+}
+
+
+/* LETTER TEXT */
+
+.letter p{
+
+    font-size:18px;
+
+    line-height:1.95;
+
+    color:#f5eafa;
+
+    margin-bottom:28px;
+}
+
+.letter strong{
+    color:#f0c3ff;
+}
+
+
+/* SIGNATURE */
+
+.signature{
+
+    text-align:center;
+
+    margin-top:50px;
+
+    font-size:27px;
+
+    color:#efcfff;
+}
+
+.signature-heart{
+
+    font-size:45px;
+
+    display:block;
+
+    margin-top:15px;
+
+    animation:heart 1.5s infinite;
+}
+
+@keyframes heart{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.25);
+    }
+}
+
+
+/* =========================
+   FINAL SECTION
+========================= */
+
+.final-section{
+
+    min-height:75vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:
+        60px
+        20px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.final-box{
+    max-width:850px;
+}
+
+.final-flower{
+
+    font-size:110px;
+
+    filter:
+        drop-shadow(0 0 35px #c55fff);
+
+    animation:pulse 3s infinite;
+}
+
+.final-box h2{
+
+    font-size:
+        clamp(38px,8vw,70px);
+
+    color:#e8b5ff;
+
+    margin:
+        25px 0;
+
+    text-shadow:
+        0 0 25px #cf78ff99;
+}
+
+.final-box p{
+
+    font-size:22px;
+
+    color:#eee0f5;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    color:#cba8dc;
+
+    font-size:14px;
+
+    position:relative;
+
+    z-index:3;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .hero{
+        min-height:95vh;
+        padding:30px 17px;
+    }
+
+    .hero-content{
+        padding:20px 10px;
+    }
+
+    .small-title{
+        font-size:11px;
+        letter-spacing:3px;
+    }
+
+    .flower-symbol{
+        font-size:70px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero-subtitle{
+        font-size:17px;
+        line-height:1.65;
+    }
+
+    .open-button{
+        font-size:16px;
+        padding:
+            15px
+            25px;
+    }
+
+    .garden{
+        height:140px;
+    }
+
+    .garden-flower{
+        font-size:40px;
+    }
+
+    .letter{
+
+        padding:
+            38px
+            22px;
+
+        border-radius:24px;
+    }
+
+    .letter-title{
+        font-size:27px;
+    }
+
+    .letter p{
+
+        font-size:17px;
+
+        line-height:1.85;
+
+        text-align:left;
+    }
+
+    .letter:before,
+    .letter:after{
+        font-size:48px;
+    }
+
+    .final-box h2{
+        font-size:42px;
+    }
+
+    .final-box p{
+        font-size:18px;
+    }
+}
 </style>
 </head>
+
 <body>
-<div class="card">
 
-<h1>For My Love 💜</h1>
-<div class="sub">A little piece of my heart, made just for you.</div>
 
-<div class="flower">
-<div class="stem"></div>
-<div class="leaf"></div><div class="leaf leaf2"></div>
-<div class="p"></div><div class="p p2"></div><div class="p p3"></div>
-<div class="p p4"></div><div class="p p5"></div>
-<div class="center"></div>
+<!-- =========================
+     BOKEH
+========================= -->
+
+<div class="bokeh">
+
+    <i class="b1"></i>
+    <i class="b2"></i>
+    <i class="b3"></i>
+    <i class="b4"></i>
+    <i class="b5"></i>
+    <i class="b6"></i>
+    <i class="b7"></i>
+
 </div>
 
-<div class="note">✦ This flower blooms only for you ✦</div>
+
+<!-- =========================
+     STARS
+========================= -->
+
+<div class="stars">
+
+    <span class="star"
+          style="top:10%;left:8%">
+          ✦
+    </span>
+
+    <span class="star"
+          style="top:20%;left:25%;animation-delay:1s">
+          ✧
+    </span>
+
+    <span class="star"
+          style="top:15%;left:70%;animation-delay:2s">
+          ✦
+    </span>
+
+    <span class="star"
+          style="top:30%;left:90%;animation-delay:.5s">
+          ✧
+    </span>
+
+    <span class="star"
+          style="top:45%;left:12%;animation-delay:1.5s">
+          ✦
+    </span>
+
+    <span class="star"
+          style="top:55%;left:82%;animation-delay:2.5s">
+          ✧
+    </span>
+
+    <span class="star"
+          style="top:72%;left:30%;animation-delay:.8s">
+          ✦
+    </span>
+
+    <span class="star"
+          style="top:82%;left:72%;animation-delay:1.8s">
+          ✧
+    </span>
+
+</div>
+
+
+<!-- =========================
+     FLOATING FLOWERS
+========================= -->
+
+<div class="floating-flower"
+     style="left:5%;font-size:28px;animation-duration:14s">
+     🌸
+</div>
+
+<div class="floating-flower"
+     style="left:17%;font-size:22px;animation-duration:19s;animation-delay:2s">
+     💜
+</div>
+
+<div class="floating-flower"
+     style="left:31%;font-size:30px;animation-duration:16s;animation-delay:5s">
+     🌺
+</div>
+
+<div class="floating-flower"
+     style="left:47%;font-size:24px;animation-duration:21s;animation-delay:1s">
+     🌷
+</div>
+
+<div class="floating-flower"
+     style="left:63%;font-size:30px;animation-duration:17s;animation-delay:4s">
+     🌸
+</div>
+
+<div class="floating-flower"
+     style="left:78%;font-size:25px;animation-duration:20s;animation-delay:3s">
+     💜
+</div>
+
+<div class="floating-flower"
+     style="left:91%;font-size:30px;animation-duration:15s;animation-delay:6s">
+     🌺
+</div>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+    <div class="flower-symbol">
+        💜🌸
+    </div>
+
+    <div class="small-title">
+        This is for you Mommy 🥺
+    </div>
+
+    <h1>
+        Happy 5th<br>
+        Monthsary &<br>
+        Girlfriend's Day
+    </h1>
+
+    <p class="hero-subtitle">
+
+        Five months with you, love, memories,
+        misunderstandings, distance, and choosing
+        each other through everything. 🌙
+
+    </p>
+
+    <a class="open-button"
+       href="#letter">
+
+       Please Open My Heart 💌
+
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FLOWER GARDEN
+========================= -->
+
+<div class="garden">
+
+    <div class="garden-flower">🌷</div>
+
+    <div class="garden-flower">🌸</div>
+
+    <div class="garden-flower">🌺</div>
+
+    <div class="garden-flower">💜</div>
+
+    <div class="garden-flower">🌸</div>
+
+    <div class="garden-flower">🌷</div>
+
+    <div class="garden-flower">🌺</div>
+
+</div>
+
+
+<!-- =========================
+     LOVE LETTER
+========================= -->
+
+<section
+    class="letter-section"
+    id="letter">
 
 <div class="letter">
 
-<p class="first">My love,</p>
+<h2 class="letter-title">
+    For My Beautiful Wife 💜
+</h2>
 
-<p>I’m writing this because sometimes words feel too small to say everything I really feel, but I need you to know, you’re the first thing I think of when I wake up and the last thing on my mind before I sleep. Even on the quiet days, even when we’re apart, even when everything feels heavy… you’re still there, in every part of me.</p>
 
-<p>Thank you for staying. Thank you for choosing me even when I’m hard to understand, even when I overthink too much, even when I’m not my best self. You make me feel safe in a way I never thought I could be, like I don’t have to hide anything from you. With you, I can just be me.</p>
+<p>
 
-<p>I know I’m not perfect. I get scared, I worry too much, I have days where I feel lost and I don’t know how to say it. But please believe me when I tell you, my heart is yours. Every bit of it. No matter how far apart we are, no matter how busy life gets, I’m always yours. I see a future with you. I want to be the one who holds your hand through everything, the one you come to when you’re happy and when you’re tired, the one who never makes you feel like you’re alone.</p>
+Can you believe it?
 
-<p>You’re beautiful, not just to look at, but the way you care, the way you laugh, the way you just are. You make everything brighter just by being in it. I’m so proud of you, for how hard you try, for how much you give, for the amazing person you are. Don’t ever forget how special you are to me.</p>
+<strong>5 months na tayo, ang bilis.</strong>
 
-<p>I promise I’ll keep trying. I’ll keep learning how to love you better, how to listen more, how to be the man you deserve. Whatever happens, whatever we go through, I’m not going anywhere. You’re my person. You’re the one I want.</p>
+Five months of laughter, of late night talks,
+of sweet moments… and also of misunderstandings,
+of distance, of days na parang ang hirap intindihin
+ang isa’t isa.
 
-<p>I love you more than I can ever say.</p>
+But through all of that, we stayed.
 
-<p class="end">Yours, always 💌</p>
+And that alone makes me so, so grateful.
 
-<div class="heart">💜</div>
+</p>
+
+
+<p>
+
+Y'know what, minsan napapaisip din ako.
+Minsan natatakot ako.
+
+Natatakot baka hindi sapat yung kaya kong
+ibigay sa’yo.
+
+Natatakot baka nakakalimutan kong iparamdam
+sa’yo kung gaano ka kahalaga.
+
+Sorry kung minsan nagkukulang ako.
+
+Sorry kung may mga araw na nasasaktan kita
+o hindi ko nagagawang intindihin ka agad.
+
+Sorry kung minsan ang dami kong what ifs
+at overthinking, hindi dahil sa wala kang halaga,
+kundi dahil sa takot kong mawala ka.
+
+Kasi ikaw yung pinakamagandang nangyari sa’kin,
+at ayokong mawala ‘yun.
+
+It's hard to live in a world without you.
+
+</p>
+
+
+<p>
+
+Every single day, mas lalo kitang minamahal,
+hindi lang sa masasayang araw, kundi pati sa mga
+oras na magulo tayo.
+
+Kahit may tampuhan, kahit may misunderstanding,
+kahit pagod tayo pareho…
+
+<strong>ikaw pa rin.</strong>
+
+Ikaw yung gusto kong makausap pagkagising.
+
+Ikaw yung hinihintay ko bago matulog.
+
+Ikaw yung uuwian ko kahit gaano kabigat
+ang araw ko.
+
+<strong>
+You are my person  in every way possible.
+</strong>
+
+</p>
+
+
+<p>
+
+I know hindi tayo perfect.
+
+Alam kong may mga bagay pa tayong kailangang
+ayusin, kailangang intindihin, kailangang pagtulungan.
+
+Pero handa akong maghintay,
+handa akong magbago,
+handa akong makinig,
+para sa’tin.
+
+Kasi worth it ka.
+
+Worth it ang paghihintay,
+bawat pagsisikap.
+
+Gaano ka man kalayo,
+ikaw lang 'to.
+
+Wala nang iba.
+
+</p>
+
+
+<p>
+
+Thank you for choosing me.
+
+Thank you for staying kahit minsan mahirap
+intindihin.
+
+Thank you for loving me kahit sa mga oras
+na hindi ko kaya mahalin ang sarili ko.
+
+You make me feel things I never thought
+I’d feel, and you make me want to be a better man
+para sa’yo, para sa’tin.
+
+</p>
+
+
+<p>
+
+I hope na hindi ka magsasawang samahan ako.
+
+Sana sa susunod na mga months,
+years, tayo pa rin.
+
+I’ll keep holding on to you, promise.
+
+I’ll keep trying,
+I’ll keep understanding,
+I’ll keep loving you 
+
+deeper than before,
+stronger than ever.
+
+</p>
+
+
+<p>
+
+<strong>
+Happy 5th monthsary and Happy Girlfriend's Day,
+mahal ko.
+</strong>
+
+Ikaw lang ang pipiliin ko,
+ngayon, bukas, at sa lahat ng panahon.
+
+I love you so, so much more than words can say.
+
+💗💗
+
+</p>
+
+
+<div class="signature">
+
+    Forever yours,
+
+    <span class="signature-heart">
+        💜
+    </span>
 
 </div>
+
 </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL MESSAGE
+========================= -->
+
+<section class="final-section">
+
+<div class="final-box">
+
+    <div class="final-flower">
+        🌸
+    </div>
+
+    <h2>
+        Ikaw pa rin. Ikaw lang. 💜
+    </h2>
+
+    <p>
+
+        Five months down, and I hope there are
+        countless more memories, laughs,
+        late night talks, and beautiful moments
+        waiting for us.
+
+        I hope to see you soon. 🥺
+
+    </p>
+
+    <p style="margin-top:25px">
+
+        Happy 5th Monthsary,
+        Mommy ko! 🌷
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    Made with all my heart,
+    just for you. 💜🌸
+
+</footer>
+
+
 </body>
-</html>
-
+      </html>
